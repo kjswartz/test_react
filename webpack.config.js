@@ -7,7 +7,7 @@ module.exports = {
   context: __dirname + "/src",
 
   entry: {
-    fitlife: [
+    src: [
       "./js/app.js",
     ],
 
@@ -57,6 +57,11 @@ module.exports = {
       title: 'Test',
       template: 'index.ejs',
     }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
   ],
   // Development
   devServer: {

@@ -2,7 +2,7 @@ import "../css/test.scss";
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { Router, Route, IndexRoute, browserHistory } from "react-router";
+import { Router, Route, IndexRoute, hashHistory } from "react-router";
 
 ///////////////////////////////////////////////////////////////////////////////
 var App = React.createClass({
@@ -18,8 +18,7 @@ var App = React.createClass({
 });
 
 var routes = (
-  <Route path="/" component={App}>
-  </Route>
+  <Route path="/" component={App} />
 );
 
-ReactDOM.render(<Router history={browserHistory}>{routes}</Router>, document.getElementById('app'));
+ReactDOM.render(<Router history={hashHistory}>{routes}</Router>, document.getElementById('app'));
